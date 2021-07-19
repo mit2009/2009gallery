@@ -1,5 +1,349 @@
 // Data file for all the years
 DATA = {
+    2020: {
+    themeName: "Kindness",
+    themeDesc: "",
+    highlights: [
+      {
+        subheading: "The Class"
+      },
+      // {
+      //   linkLabel: "Compendium",
+      //   linkUrl: "data/2019/highlights/title.mp4",
+      //   youtubeId: ""
+      //   vimeoId: ""
+      // },
+      {
+        linkLabel: "Home page and slide show",
+        linkUrl: ""
+      },
+      {
+        linkLabel: "Theme Reveal",
+        linkUrl: "data/2020/highlights/theme_reveal_lecture.mp4",
+        vimeoId: "456399230"
+      },
+      {
+        linkLabel: "Theme Reveal Animation",
+        linkUrl: "data/2020/highlights/theme_reveal_animation.mp4",
+        youtubeId: "Of3_Z-ljuDw"
+      },
+      {
+        linkLabel: "Kindness in Killian",
+        linkUrl: "data/2020/highlights/theme_reveal_kindness_in_Killian.mp4",
+        youtubeId: "8IpQC7Q4eqU"
+      },
+      {
+        subheading: "Final Presentations"
+      },
+      {
+        linkLabel: "Intro: Quadcopter, Concert, and Countdown!",
+        linkUrl: "data/2020/highlights/intro-quad-organ-concert-animation.mp4",
+        youtubeId: "XRX-5X4yals"
+      },
+      {
+        linkLabel: "Closing: A Special Gift",
+        linkUrl: "data/2020/highlights/outro-gift.mp4",
+        youtubeId: "KvhpkjZR_Yo"
+      },
+      {
+        subheading: "Behind the Scenes"
+      },
+      {
+        linkLabel: "Teams at the Studio",
+        linkUrl: "data/2020/highlights/outro-behind-the-scenes.mp4",
+        youtubeId: "8pkQQlQ6wck"
+      },
+    ],
+    projects: {
+      blue: {
+        projName: "Sensus",
+        projDesc: "at home neuropathy detection",
+        projColor: "blue",
+        projTeam: "AJ Garcia, Amanda Garofalo, Branden Morioka, Cate Waft, Eesam Hourani, Eva Anderson, Jenny Chan, Joyce Noh, Lydia Light, Andie Maloney, Antonella Masini, Brittany Sacks, Jessica Yen, Lucy Cho, Melissa Klein, Nisal Ovitigala",
+        deliverables: {
+          ideas: {
+            A1: {},
+            A2: {},
+            A3: {},
+            B1: {},
+            B2: {},
+            B3: {}
+          },
+          sketch: {
+            A1: {
+              name: "Boost-It",
+              vimeoId: "466741626"
+            },
+            A2: {
+              name: "TranquiliSeat",
+              vimeoId: "466741605"
+            },
+            B1: {
+              name: "PNAT",
+              vimeoId: "466736652"
+            },
+            B2: {
+              name: "Blubricator",
+              vimeoId: "466736635"
+            }
+
+          },
+          assembly: {
+            name: "PNAT"
+          },
+          tech: {
+            name: "PNAT",
+            //presentation vimeoId:"476482103",
+            vimeoId: "476486497"
+          },
+          final: {
+            name: "Sensus",
+            youtubeId: "TfnvwDFzo7I"
+          }
+        }
+      },
+
+      green: {
+        projName: "Auxilia",
+        projDesc: "wheelchair doorway assistance",
+        projColor: "green",
+        projTeam: "Alex Salisbury, Danny Alel, Darya Guettler, Hannah Adams, Isy Osubor, Jason Santillan Fausto, Lani Lee, Rostam Reifschneider, Alyssa Wells-Lewis, Carmen Sleight, Elim Poon, Jimmy Tran, Jordan Tappa, Pablo Ampudia, Rima Rebei, Xiqing Wang",
+        deliverables: {
+          ideas: {
+            A1: {},
+            A2: {},
+            A3: {},
+            B1: {},
+            B2: {},
+            B3: {}
+          },
+          sketch: {
+            A1: {
+              name: "SenseArt",
+              vimeoId: "466739390"
+            },
+            A2: {
+              name: "Hestia",
+              vimeoId: "466739380"
+            },
+            B1: {
+              name: "Vibracelet",
+              vimeoId: "466736629"
+            },
+            B2: {
+              name: "Feelix",
+              vimeoId: "466736601"
+            }
+
+          },
+          assembly: {
+            name: "Pivot"
+          },
+          tech: {
+            name: "Pivot",
+            //presentation vimeoId:"476482120",
+            vimeoId: "476486523"
+          },
+          final: {
+            name: "Auxilia",
+            youtubeId: "Opa-rR0CclM"
+          }
+        }
+      },
+
+      pink: {
+        projName: "Solace",
+        projDesc: "foldable floatation for emergencies",
+        projColor: "pink",
+        projTeam: "Christian Schillinger, Courtney Byrne, Faith Jones, Hannah Mahaffey, Josh Maldonado, Varsha Sridhar, Zion Moore, Alex Encinas Maqueda, Arnav Patel, Jiaheng Zhang, Kailey Allen, Max Thomsen, Megan Flynn, Riley Terando, Rolando Rodarte",
+        deliverables: {
+          ideas: {
+            A1: {},
+            A2: {},
+            A3: {},
+            B1: {},
+            B2: {},
+            B3: {}
+          },
+          sketch: {
+            A1: {
+              name: "AirBand",
+              vimeoId: "466729165"
+            },
+            A2: {
+              name: "Corigami",
+              vimeoId: "466729212"
+            },
+            B1: {
+              name: "MaxSteam",
+              vimeoId: "466742940"
+            },
+            B2: {
+              name: "Audirect",
+              vimeoId: "466743035"
+            }
+
+          },
+          assembly: {
+            name: "Corigami"
+          },
+          tech: {
+            name: "Corigami",
+            //presentation vimeoId:"476482100",
+            vimeoId: "476485776"
+          },
+          final: {
+            name: "Solace",
+            youtubeId: "Ba72HZvJsoI"
+          }
+        }
+      },
+
+      purple: {
+        projName: "Link",
+        projDesc: "detachable foot retraint",
+        projColor: "purple",
+        projTeam: "Anupama Phatak, Laura Huang, Miki Hansen, Sachin Thapa, Salem Ali, Sebastian Uribe, Sheila Kennedy-Moore, Smita Bhattacharjee, Bella Montanaro, Caleb Amanfu, Chloe Nelson-Arzuaga, Daniel Gonzalez Diaz, Emily Niu, Sandra Li, Tony Terrasa, Uriel Magana-Salgado",
+        deliverables: {
+          ideas: {
+            A1: {},
+            A2: {},
+            A3: {},
+            B1: {},
+            B2: {},
+            B3: {}
+          },
+          sketch: {
+            A1: {
+              name: "Foot Stay Put",
+              vimeoId: "466737366"
+            },
+            A2: {
+              name: "Align",
+              vimeoId: "466738011"
+            },
+            B1: {
+              name: "Reach",
+              vimeoId: "466736591"
+            },
+            B2: {
+              name: "uCook",
+              vimeoId: "466736571"
+            }
+
+          },
+          assembly: {
+            name: "Link"
+          },
+          tech: {
+            name: "Link",
+            //presentation vimeoId:"476482084",
+            vimeoId: "476485803"
+          },
+          final: {
+            name: "Link",
+            youtubeId: "WfZa9FHyNfU"
+          }
+        }
+      },
+
+      red: {
+        projName: "Spartan",
+        projDesc: "boxing defensive trainer",
+        projColor: "red",
+        projTeam: "Ben Koenig, Drew Callahan, Emily Skilling, Emily Colby, Flora Klise, Gabrielle Enns, Jessica Xu, Jessie Wang, Joush Padilla, JT McGuire, Orisa Coombs, Sahara Villarreal, Swoosh Shrestha, Tommy Adebiyi, Wendy Wang, Willie Zhu",
+        deliverables: {
+          ideas: {
+            A1: {},
+            A2: {},
+            A3: {},
+            B1: {},
+            B2: {},
+            B3: {}
+          },
+          sketch: {
+            A1: {
+              name: "Sleepy Head",
+              vimeoId: "466729197"
+            },
+            A2: {
+              name: "Spartan",
+              vimeoId: "466729196"
+            },
+            B1: {
+              name: "tacTILES",
+              vimeoId: "466742430"
+            },
+            B2: {
+              name: "Beacon Balloon",
+              vimeoId: "466742426"
+            }
+
+          },
+          assembly: {
+            name: "Spartan"
+          },
+          tech: {
+            name: "Spartan",
+            //presentation vimeoId:"476482104",
+            vimeoId: "476486686"
+          },
+          final: {
+            name: "Spartan",
+            youtubeId: "EvVv7eTjuKE"
+          }
+        }
+      },
+
+      yellow: {
+        projName: "Revolve",
+        projDesc: "gyroscopically actuated dumbell",
+        projColor: "yellow",
+        projTeam: "Aaron Garza, Abdalla Osman, Alejandra Navarro, Aline Vargas Manriquez, Allison Pinto, Anthony Troupe, Antoni Soledad, Benjamin Rodriguez, Cas Lesperance, Cole Linnus, Garrett Memoli, Geneva Casalegno, Jonathan Tagoe, Kai Maier, Matthew Hambacher, Rosalie Phillips, Thad Megchelsen",
+        deliverables: {
+          ideas: {
+            A1: {},
+            A2: {},
+            A3: {},
+            B1: {},
+            B2: {},
+            B3: {}
+          },
+          sketch: {
+            A1: {
+              name: "Liteweight",
+              vimeoId: "466741643"
+            },
+            A2: {
+              name: "All-Ball Thrower",
+              vimeoId: "466741627"
+            },
+            B1: {
+              name: "GyroBell",
+              vimeoId: "466736689"
+            },
+            B2: {
+              name: "Forage Feeder",
+              vimeoId: "466736682"
+            }
+
+          },
+          assembly: {
+            name: "GyroBell"
+          },
+          tech: {
+            name: "GyroBell",
+            //presentation vimeoId:"476482080",
+            vimeoId: "476485828"
+          },
+          final: {
+            name: "Revolve",
+            youtubeId: "WwFREVKuVhw"
+          }
+        }
+      }
+    }
+  },
   2019: {
     themeName: "Ignite",
     themeDesc: "",
@@ -1583,7 +1927,7 @@ DATA = {
       },
 
       green: {
-        projName: "tatchî",
+        projName: "tachi",
         projDesc: "assistive game development platform",
         projColor: "green",
         projTeam: "Andres Galindo, Anika Yasmin, Donovan Sienkiewicz, Emily Damato, Eric Ponce, Greg Cartagena, Ishan Meswani, JD Heyns, Jana Saadi, Jeremy Bogle, Josh Woodard, Katherine Paseman, Liza Gaylord, Lucia Liu, Mary Thielking, Pelkins Ajanoh, Yasmin Chavez",
@@ -1643,14 +1987,14 @@ DATA = {
 
           },
           assembly: {
-            name: "tatchî"
+            name: "tachî"
           },
           tech: {
-            name: "tatchî",
+            name: "tachî",
             vimeoId: "243242159"
           },
           final: {
-            name: "tatchî",
+            name: "tachî",
             vimeoId: "281270826"
           }
         }
