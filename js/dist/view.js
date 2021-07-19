@@ -24992,13 +24992,15 @@ var TeamContent = React.createClass({
         var year = this.props.year;
         var section = project.deliverables.final;
 
+        var url = section.vimeoId ? "https://player.vimeo.com/video/" + section.vimeoId : "http://www.youtube.com/embed/" + section.youtubeId;
+
         return [React.createElement(
             "div",
             { className: "milestone-container", key: "final-section" },
             React.createElement(
                 "div",
                 { className: "milestone-media" },
-                React.createElement("iframe", { src: "https://player.vimeo.com/video/" + section.vimeoId, width: "600", height: "240", frameborder: "0", webkitallowfullscreen: true, mozallowfullscreen: true,
+                React.createElement("iframe", { src: url, width: "600", height: "240", frameborder: "0", webkitallowfullscreen: true, mozallowfullscreen: true,
                     allowfullscreen: true }),
                 React.createElement(
                     "div",

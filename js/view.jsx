@@ -193,10 +193,12 @@ var TeamContent = React.createClass({
         var year = this.props.year;
         var section = project.deliverables.final;
 
+        const url = section.vimeoId ? `https://player.vimeo.com/video/${section.vimeoId}` : `http://www.youtube.com/embed/${section.youtubeId}`;
+
         return [
             <div className="milestone-container" key="final-section">
                 <div className="milestone-media">
-                    <iframe src={`https://player.vimeo.com/video/${section.vimeoId}`} width="600" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen
+                    <iframe src={url} width="600" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen
                         allowfullscreen></iframe>
                     <div className="milestone-images">
                         <a href={baseUrl + `data/${year}/final/photos/original/${project.projColor}1.jpg`}><img src={baseUrl + `data/${year}/final/photos/small/${project.projColor}1.jpg`} /></a>
