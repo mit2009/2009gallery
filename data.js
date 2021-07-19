@@ -15,7 +15,7 @@ DATA = {
       // },
 
       // THIS IS BEING WORKED ON - vhung 2021
-      
+
       // {
       //   linkLabel: "Home page and slide show",
       //   linkUrl: ""
@@ -204,7 +204,7 @@ DATA = {
 
       purple: {
         projName: "Link",
-        projDesc: "detachable foot retraint",
+        projDesc: "detachable foot restraint",
         projColor: "purple",
         projTeam: "Anupama Phatak, Laura Huang, Miki Hansen, Sachin Thapa, Salem Ali, Sebastian Uribe, Sheila Kennedy-Moore, Smita Bhattacharjee, Bella Montanaro, Caleb Amanfu, Chloe Nelson-Arzuaga, Daniel Gonzalez Diaz, Emily Niu, Sandra Li, Tony Terrasa, Uriel Magana-Salgado",
         deliverables: {
