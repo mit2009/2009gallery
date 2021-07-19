@@ -133,6 +133,7 @@ var TeamContent = React.createClass({
                         <div className="milestone-media">
                             <iframe src={`https://player.vimeo.com/video/${sectionTeams[s].vimeoId}`} width="400" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen
                                 allowfullscreen></iframe>
+                            {/* Has Demo Video */}
                             {sectionTeams[s+'d'] &&
                                 <iframe src={`https://player.vimeo.com/video/${sectionTeams[s+'d'].vimeoId}`} width="400" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen
                                 allowfullscreen></iframe>
