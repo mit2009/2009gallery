@@ -56,11 +56,13 @@ var TeamContent = React.createClass({
             </div>
         );
     },
+    
     copyToClipboard: function (linkId) {
         var copyText = document.getElementById(linkId);
         copyText.select();
         document.execCommand("copy");
     },
+
     renderDirectLink: function (linkId, linkTitle = "Copy Direct Link") {
         let copyLink = window.location.href.split('#')[0] + '#' + linkId;
         return (
@@ -72,6 +74,7 @@ var TeamContent = React.createClass({
             </span>
         )
     },
+
     renderIdeaPosters: function (sectionLetter) {
         var ideas = this.props.project.deliverables.ideas;
 
@@ -117,7 +120,7 @@ var TeamContent = React.createClass({
         var elements = [];
         for (var s in sectionTeams) {
             if (s.substring(s.length - 1).toUpperCase() !== 'D') {
-                // TODO: Temporarily remove Demo Videos
+                // Don't iterate over the ones ending in 'D' (these are demos)
                 var highlightColor = classColors[project.projColor];
                 elements.push(
                     <h4 key={`${sectionKey}-${s}-header`}>
@@ -130,6 +133,10 @@ var TeamContent = React.createClass({
                         <div className="milestone-media">
                             <iframe src={`https://player.vimeo.com/video/${sectionTeams[s].vimeoId}`} width="400" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen
                                 allowfullscreen></iframe>
+                            {sectionTeams[s+'d'] &&
+                                <iframe src={`https://player.vimeo.com/video/${sectionTeams[s+'d'].vimeoId}`} width="400" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen
+                                allowfullscreen></iframe>
+                            }
                             <div className="milestone-images">
                                 <a href={baseUrl + `data/${year}/${sectionKey}/photos/${project.projColor}${s}_1.jpg`}><img src={baseUrl + `data/${year}/${sectionKey}/photos/${project.projColor}${s}_1_sm.jpg`} /></a>
                                 <a href={baseUrl + `data/${year}/${sectionKey}/photos/${project.projColor}${s}_2.jpg`}><img src={baseUrl + `data/${year}/${sectionKey}/photos/${project.projColor}${s}_2_sm.jpg`} /></a>

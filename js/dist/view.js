@@ -24742,11 +24742,13 @@ var TeamContent = React.createClass({
             this.renderFinalSection()
         );
     },
+
     copyToClipboard: function copyToClipboard(linkId) {
         var copyText = document.getElementById(linkId);
         copyText.select();
         document.execCommand("copy");
     },
+
     renderDirectLink: function renderDirectLink(linkId) {
         var _this = this;
 
@@ -24770,6 +24772,7 @@ var TeamContent = React.createClass({
             React.createElement("input", { type: "text", className: "hidden-textbox", value: copyLink, id: linkId })
         );
     },
+
     renderIdeaPosters: function renderIdeaPosters(sectionLetter) {
         var ideas = this.props.project.deliverables.ideas;
 
@@ -24829,7 +24832,7 @@ var TeamContent = React.createClass({
         var elements = [];
         for (var s in sectionTeams) {
             if (s.substring(s.length - 1).toUpperCase() !== 'D') {
-                // TODO: Temporarily remove Demo Videos
+                // Don't iterate over the ones ending in 'D' (these are demos)
                 var highlightColor = _colors.classColors[project.projColor];
                 elements.push(React.createElement(
                     "h4",
@@ -24855,6 +24858,8 @@ var TeamContent = React.createClass({
                         "div",
                         { className: "milestone-media" },
                         React.createElement("iframe", { src: "https://player.vimeo.com/video/" + sectionTeams[s].vimeoId, width: "400", height: "240", frameborder: "0", webkitallowfullscreen: true, mozallowfullscreen: true,
+                            allowfullscreen: true }),
+                        sectionTeams[s + 'd'] && React.createElement("iframe", { src: "https://player.vimeo.com/video/" + sectionTeams[s + 'd'].vimeoId, width: "400", height: "240", frameborder: "0", webkitallowfullscreen: true, mozallowfullscreen: true,
                             allowfullscreen: true }),
                         React.createElement(
                             "div",
