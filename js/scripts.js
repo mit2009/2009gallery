@@ -38,7 +38,6 @@ $(function() {
         $thumbnailContainer = $('<div class="thumbnail-container"></div>')
         for (i in colors) {
             var url = baseUrl + year + '/final/photos/small/' + colors[i] + '1.jpg';
-            console.log(url);
             var $thumbnail = $('<a href=""></a>')
             var $thumbnailBg = $('<div class="thumbnail-bg"></div>')
             

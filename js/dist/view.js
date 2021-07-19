@@ -24709,12 +24709,16 @@ var TeamContent = React.createClass({
                 "Sketch Models"
             ),
             this.renderTeamSections("sketch models", "sketch"),
-            React.createElement(
-                "h3",
-                { className: "mock-ups" },
-                "Mock-ups"
+            project.deliverables.mockup && React.createElement(
+                "div",
+                null,
+                React.createElement(
+                    "h3",
+                    { className: "mock-ups" },
+                    "Mock-ups"
+                ),
+                this.renderTeamSections("mock-up", "mockup")
             ),
-            this.renderTeamSections("mock-up", "mockup"),
             React.createElement(
                 "h3",
                 { className: "assembly" },
@@ -24739,7 +24743,6 @@ var TeamContent = React.createClass({
         );
     },
     copyToClipboard: function copyToClipboard(linkId) {
-        console.log(linkId);
         var copyText = document.getElementById(linkId);
         copyText.select();
         document.execCommand("copy");
@@ -25059,11 +25062,7 @@ var sections = {
     'mock-ups': 4
 };
 
-var scrollBreaks = [];
-
 function updateSidemenuHighlight() {
-    console.log('triggered');
-
     var closestSection = 0;
     var section = 'team';
     var scrollTop = $(window).scrollTop();
@@ -25078,13 +25077,10 @@ function updateSidemenuHighlight() {
         $('li').removeClass('sidemenu-highlight');
     });
     $('li.m-' + section).addClass('sidemenu-highlight');
-
-    // window.location.hash = section;
 }
 
 function scrollToSection(section) {
     setTimeout(function () {
-        console.log('locating', section);
         if ($('h3.' + section).length > 0) {
             $(window).scrollTo($('h3.' + section), {
                 offset: -50,
@@ -25092,7 +25088,6 @@ function scrollToSection(section) {
             });
             updateSidemenuHighlight();
         } else if ($('input#' + section).length > 0) {
-            console.log('scrolling to... input#' + section);
             $(window).scrollTo($('input#' + section), {
                 offset: -150,
                 duration: 300
@@ -25139,8 +25134,51 @@ $(function () {
             ReactDOM.render(React.createElement(TeamContent, { project: teamProject, year: urlLocation.year }), document.getElementById('project-content'));
 
             // TODO: Move
-
             ReactDOM.render(React.createElement(_nav.Navigation, { teamColor: urlLocation.team, teamYear: urlLocation.year }), document.getElementById('navigation'));
+
+            ReactDOM.render(React.createElement(
+                "div",
+                null,
+                React.createElement(
+                    "ul",
+                    null,
+                    React.createElement(
+                        "li",
+                        { "data-section": "team", "class": "m-team" },
+                        "Team"
+                    ),
+                    React.createElement(
+                        "li",
+                        { "data-section": "3-ideas", "class": "m-3-ideas" },
+                        "3 Ideas"
+                    ),
+                    React.createElement(
+                        "li",
+                        { "data-section": "sketch-models", "class": "m-sketch-models" },
+                        "Sketch Models"
+                    ),
+                    teamProject.deliverables.mockup && React.createElement(
+                        "li",
+                        { "data-section": "mock-ups", "class": "m-mock-ups" },
+                        "Mock-ups"
+                    ),
+                    React.createElement(
+                        "li",
+                        { "data-section": "assembly", "class": "m-assembly" },
+                        "Assembly"
+                    ),
+                    React.createElement(
+                        "li",
+                        { "data-section": "technical-review", "class": "m-technical-review" },
+                        "Technical Review"
+                    ),
+                    React.createElement(
+                        "li",
+                        { "data-section": "final", "class": "m-final" },
+                        "Final"
+                    )
+                )
+            ), document.getElementById('project-sidemenu'));
 
             // TODO: Figure out Clipboardy
             new Clipboard('.btn');
@@ -25155,7 +25193,7 @@ $(function () {
             buildSidemenu();
 
             locationHash = window.location.hash;
-            console.log('checking', locationHash);
+
             if (locationHash !== undefined && locationHash !== "") {
                 if ('scrollRestoration' in history) {
                     history.scrollRestoration = 'manual';

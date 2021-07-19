@@ -37,8 +37,10 @@ var TeamContent = React.createClass({
                 <h3 className="sketch-models">Sketch Models</h3>
                 {this.renderTeamSections("sketch models", "sketch")}
 
-                <h3 className="mock-ups">Mock-ups</h3>
-                {this.renderTeamSections("mock-up", "mockup")}
+                {project.deliverables.mockup && <div>
+                    <h3 className="mock-ups">Mock-ups</h3>
+                    {this.renderTeamSections("mock-up", "mockup")}
+                </div>} 
 
                 <h3 className="assembly">Assembly Review
                         {this.renderDirectLink("assembly")}</h3>
@@ -55,7 +57,6 @@ var TeamContent = React.createClass({
         );
     },
     copyToClipboard: function (linkId) {
-        console.log(linkId);
         var copyText = document.getElementById(linkId);
         copyText.select();
         document.execCommand("copy");
@@ -222,11 +223,7 @@ var sections = {
     'mock-ups': 4
 }
 
-var scrollBreaks = [];
-
 function updateSidemenuHighlight() {
-    console.log('triggered');
-
     var closestSection = 0;
     var section = 'team';
     var scrollTop = $(window).scrollTop();
@@ -241,14 +238,10 @@ function updateSidemenuHighlight() {
         $('li').removeClass('sidemenu-highlight');
     })
     $('li.m-' + section).addClass('sidemenu-highlight');
-
-    // window.location.hash = section;
-
 }
 
 function scrollToSection(section) {
     setTimeout(function () {
-        console.log('locating', section);
         if ($('h3.' + section).length > 0) {
             $(window).scrollTo($('h3.' + section), {
                 offset: -50,
@@ -256,7 +249,6 @@ function scrollToSection(section) {
             })
             updateSidemenuHighlight();
         } else if ($('input#' + section).length > 0) {
-            console.log('scrolling to... input#' + section)
             $(window).scrollTo($('input#' + section), {
                 offset: -150,
                 duration: 300
@@ -310,11 +302,25 @@ $(function () {
             );
 
             // TODO: Move
-
             ReactDOM.render(
                 <Navigation teamColor={urlLocation.team} teamYear={urlLocation.year} />,
                 document.getElementById('navigation')
             );
+
+            ReactDOM.render(
+                <div>
+                    <ul>
+                        <li data-section="team" class="m-team">Team</li>
+                        <li data-section="3-ideas" class="m-3-ideas">3 Ideas</li>
+                        <li data-section="sketch-models" class="m-sketch-models">Sketch Models</li>
+                        {teamProject.deliverables.mockup && <li data-section="mock-ups" class="m-mock-ups">Mock-ups</li>}
+                        <li data-section="assembly" class="m-assembly">Assembly</li>
+                        <li data-section="technical-review" class="m-technical-review">Technical Review</li>
+                        <li data-section="final" class="m-final">Final</li>
+                    </ul>
+                </div>, document.getElementById('project-sidemenu')
+            );
+            
 
             // TODO: Figure out Clipboardy
             new Clipboard('.btn');
@@ -329,7 +335,7 @@ $(function () {
             buildSidemenu();
 
             locationHash = window.location.hash;
-            console.log('checking', locationHash)
+            
             if (locationHash !== undefined && locationHash !== "") {
                 if ('scrollRestoration' in history) {
                     history.scrollRestoration = 'manual';
