@@ -60,12 +60,260 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 72);
+/******/ 	return __webpack_require__(__webpack_require__.s = 105);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 25:
+/***/ 105:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(106);
+
+
+/***/ }),
+
+/***/ 106:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _nav = __webpack_require__(29);
+
+var baseUrl = "http://designed.mit.edu/gallery/data/";
+
+var GalleryContent = React.createClass({
+    displayName: "GalleryContent",
+
+    render: function render() {
+        console.log('react loaded');
+        var years = Object.keys(DATA).reverse();
+        console.log(years);
+        var yearSections = [];
+        for (var i in years) {
+            var year = years[i];
+            yearSections.push(React.createElement(
+                "div",
+                null,
+                React.createElement(
+                    "h2",
+                    null,
+                    year
+                ),
+                React.createElement(
+                    "h3",
+                    null,
+                    DATA[year].themeName
+                ),
+                this.renderGalleryYear(year)
+            ));
+        }
+        return React.createElement(
+            "div",
+            null,
+            yearSections
+        );
+    },
+
+    renderGalleryYear: function renderGalleryYear(year) {
+        // var ideas = this.props.project.deliverables.ideas;
+        var teams = [];
+        var projects = DATA[year].projects;
+
+        for (var s in projects) {
+            var backgroundUrl = 'url("' + baseUrl + year + '/final/photos/small/' + s + '1.jpg")';
+            var teamUrl = "view.html?year=" + year + "&team=" + s;
+            teams.push(React.createElement(
+                "a",
+                { href: teamUrl },
+                React.createElement(
+                    "div",
+                    { style: { backgroundImage: backgroundUrl }, className: "thumbnail-bg" },
+                    React.createElement(
+                        "div",
+                        { className: "product-info" },
+                        React.createElement(
+                            "h4",
+                            null,
+                            projects[s].projName
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            projects[s].projDesc
+                        )
+                    )
+                )
+            ));
+        }
+
+        var highlights = DATA[year].highlights;
+        var highlightElements = [];
+        var highlightGroup = [];
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+            for (var _iterator = highlights[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                var highlight = _step.value;
+
+                if (highlight['subheading']) {
+                    if (highlightGroup.length != 0) {
+                        // Push previous highlight group
+                        highlightElements.push(React.createElement(
+                            "div",
+                            { className: "highlight-group" },
+                            highlightGroup
+                        ));
+                        highlightGroup = [];
+                    }
+                    highlightGroup.push(React.createElement(
+                        "div",
+                        { className: "subheading" },
+                        highlight.subheading
+                    ));
+                } else {
+                    if (highlight.youtubeId) {
+                        // Due to Vimeo hating us, now bumping youtube links as priority
+                        highlightGroup.push(React.createElement(
+                            "div",
+                            { className: "highlight-link" },
+                            React.createElement(
+                                "a",
+                                { href: "https://www.youtube.com/watch?v=" + highlight.youtubeId },
+                                highlight.linkLabel
+                            )
+                        ));
+                    } else if (highlight.vimeoId) {
+                        highlightGroup.push(React.createElement(
+                            "div",
+                            { className: "highlight-link" },
+                            React.createElement(
+                                "a",
+                                { href: "http://vimeo.com/" + highlight.vimeoId },
+                                highlight.linkLabel
+                            )
+                        ));
+                    } else {
+                        // Some data has been malformed, and contains an additional data/. 
+                        // Dirty hack to strip it.
+                        var linkUrl = highlight.linkUrl.indexOf("data/") >= 0 ? highlight.linkUrl.replace('data/', '') : highlight.linkUrl;
+                        highlightGroup.push(React.createElement(
+                            "div",
+                            { className: "highlight-link" },
+                            React.createElement(
+                                "a",
+                                { href: baseUrl + linkUrl },
+                                highlight.linkLabel
+                            )
+                        ));
+                    }
+                }
+            }
+            // Push final highlighht group
+        } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion && _iterator.return) {
+                    _iterator.return();
+                }
+            } finally {
+                if (_didIteratorError) {
+                    throw _iteratorError;
+                }
+            }
+        }
+
+        highlightElements.push(React.createElement(
+            "div",
+            { className: "highlight-group" },
+            highlightGroup
+        ));
+
+        return React.createElement(
+            "div",
+            null,
+            React.createElement(
+                "div",
+                { className: "thumbnail-container" },
+                teams
+            ),
+            React.createElement(
+                "div",
+                { className: "highlights-container" },
+                React.createElement(
+                    "h4",
+                    null,
+                    year,
+                    " Highlight Links"
+                ),
+                React.createElement(
+                    "div",
+                    { className: "highlight-groups-container" },
+                    highlightElements
+                )
+            )
+        );
+    }
+});
+
+$(function () {
+
+    ReactDOM.render(React.createElement(GalleryContent, null), document.getElementById('gallery-content'));
+
+    // TODO: Move
+
+    ReactDOM.render(React.createElement(_nav.Navigation, null), document.getElementById('navigation'));
+
+    $(window).scroll(function () {
+        (0, _nav.updateNavigationBar)();
+    });
+
+    (0, _nav.updateNavigationBar)();
+    /*
+    
+        var baseUrl = "http://designed.mit.edu/gallery/data/"
+        var colors = ['blue', 'orange', 'red', 'pink', 'silver', 'purple', 'green', 'yellow'];
+        var years = [2015, 2014, 2013, 2012];
+        var themes = ['Magic', 'Adventure', 'Be Well', 'Outdoors'];
+    
+        for (var j in years) {
+            var year = years[j];
+            var theme = themes[j]
+    
+            var $h2 = $('<h2>' + year + '</h2>')
+            var $h3 = $('<h3>' + theme + '</h3>')
+    
+            var $thumbnailContainer = $('<div class="thumbnail-container"></div>')
+            for (var i in colors) {
+                var url = baseUrl + year + '/final/photos/small/' + colors[i] + '1.jpg';
+                console.log(url);
+                var $thumbnail = $('<a href=""></a>')
+                var $thumbnailBg = $('<div class="thumbnail-bg"></div>')
+    
+                $thumbnailBg.append(`
+                <div class="product-info">
+                    <h4>Name of Product</h4>
+                    <p>Description of Product</p>
+                </div>
+                `);
+    
+                $thumbnailBg.css('background-image', 'url(' + url + ')');
+                $thumbnail.append($thumbnailBg);
+                $thumbnailContainer.append($thumbnail);
+            }
+            $('.gallery-container').append($h2).append($h3).append($thumbnailContainer);
+        }
+        */
+});
+
+/***/ }),
+
+/***/ 29:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76,7 +324,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Navigation = exports.updateNavigationBar = undefined;
 
-var _classnames = __webpack_require__(26);
+var _classnames = __webpack_require__(30);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -355,11 +603,11 @@ var Navigation = exports.Navigation = React.createClass({
 
 /***/ }),
 
-/***/ 26:
+/***/ 30:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-  Copyright (c) 2016 Jed Watson.
+  Copyright (c) 2018 Jed Watson.
   Licensed under the MIT License (MIT), see
   http://jedwatson.github.io/classnames
 */
@@ -370,7 +618,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 	var hasOwn = {}.hasOwnProperty;
 
-	function classNames () {
+	function classNames() {
 		var classes = [];
 
 		for (var i = 0; i < arguments.length; i++) {
@@ -382,12 +630,21 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 			if (argType === 'string' || argType === 'number') {
 				classes.push(arg);
 			} else if (Array.isArray(arg)) {
-				classes.push(classNames.apply(null, arg));
-			} else if (argType === 'object') {
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
 					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString === Object.prototype.toString) {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				} else {
+					classes.push(arg.toString());
 				}
 			}
 		}
@@ -396,266 +653,19 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	}
 
 	if (typeof module !== 'undefined' && module.exports) {
+		classNames.default = classNames;
 		module.exports = classNames;
 	} else if (true) {
 		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
 			return classNames;
-		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else {
 		window.classNames = classNames;
 	}
 }());
 
-
-/***/ }),
-
-/***/ 72:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(73);
-
-
-/***/ }),
-
-/***/ 73:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _nav = __webpack_require__(25);
-
-var baseUrl = "http://designed.mit.edu/gallery/data/";
-
-var GalleryContent = React.createClass({
-    displayName: "GalleryContent",
-
-    render: function render() {
-        console.log('react loaded');
-        var years = Object.keys(DATA).reverse();
-        console.log(years);
-        var yearSections = [];
-        for (var i in years) {
-            var year = years[i];
-            yearSections.push(React.createElement(
-                "div",
-                null,
-                React.createElement(
-                    "h2",
-                    null,
-                    year
-                ),
-                React.createElement(
-                    "h3",
-                    null,
-                    DATA[year].themeName
-                ),
-                this.renderGalleryYear(year)
-            ));
-        }
-        return React.createElement(
-            "div",
-            null,
-            yearSections
-        );
-    },
-
-    renderGalleryYear: function renderGalleryYear(year) {
-        // var ideas = this.props.project.deliverables.ideas;
-        var teams = [];
-        var projects = DATA[year].projects;
-
-        for (var s in projects) {
-            var backgroundUrl = 'url("' + baseUrl + year + '/final/photos/small/' + s + '1.jpg")';
-            var teamUrl = "view.html?year=" + year + "&team=" + s;
-            teams.push(React.createElement(
-                "a",
-                { href: teamUrl },
-                React.createElement(
-                    "div",
-                    { style: { backgroundImage: backgroundUrl }, className: "thumbnail-bg" },
-                    React.createElement(
-                        "div",
-                        { className: "product-info" },
-                        React.createElement(
-                            "h4",
-                            null,
-                            projects[s].projName
-                        ),
-                        React.createElement(
-                            "p",
-                            null,
-                            projects[s].projDesc
-                        )
-                    )
-                )
-            ));
-        }
-
-        var highlights = DATA[year].highlights;
-        var highlightElements = [];
-        var highlightGroup = [];
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
-
-        try {
-            for (var _iterator = highlights[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var highlight = _step.value;
-
-                if (highlight['subheading']) {
-                    if (highlightGroup.length != 0) {
-                        // Push previous highlight group
-                        highlightElements.push(React.createElement(
-                            "div",
-                            { className: "highlight-group" },
-                            highlightGroup
-                        ));
-                        highlightGroup = [];
-                    }
-                    highlightGroup.push(React.createElement(
-                        "div",
-                        { className: "subheading" },
-                        highlight.subheading
-                    ));
-                } else {
-                    if (highlight.youtubeId) {
-                        // Due to Vimeo hating us, now bumping youtube links as priority
-                        highlightGroup.push(React.createElement(
-                            "div",
-                            { className: "highlight-link" },
-                            React.createElement(
-                                "a",
-                                { href: "https://www.youtube.com/watch?v=" + highlight.youtubeId },
-                                highlight.linkLabel
-                            )
-                        ));
-                    } else if (highlight.vimeoId) {
-                        highlightGroup.push(React.createElement(
-                            "div",
-                            { className: "highlight-link" },
-                            React.createElement(
-                                "a",
-                                { href: "http://vimeo.com/" + highlight.vimeoId },
-                                highlight.linkLabel
-                            )
-                        ));
-                    } else {
-                        // Some data has been malformed, and contains an additional data/. 
-                        // Dirty hack to strip it.
-                        var linkUrl = highlight.linkUrl.indexOf("data/") >= 0 ? highlight.linkUrl.replace('data/', '') : highlight.linkUrl;
-                        highlightGroup.push(React.createElement(
-                            "div",
-                            { className: "highlight-link" },
-                            React.createElement(
-                                "a",
-                                { href: baseUrl + linkUrl },
-                                highlight.linkLabel
-                            )
-                        ));
-                    }
-                }
-            }
-            // Push final highlighht group
-        } catch (err) {
-            _didIteratorError = true;
-            _iteratorError = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion && _iterator.return) {
-                    _iterator.return();
-                }
-            } finally {
-                if (_didIteratorError) {
-                    throw _iteratorError;
-                }
-            }
-        }
-
-        highlightElements.push(React.createElement(
-            "div",
-            { className: "highlight-group" },
-            highlightGroup
-        ));
-
-        return React.createElement(
-            "div",
-            null,
-            React.createElement(
-                "div",
-                { className: "thumbnail-container" },
-                teams
-            ),
-            React.createElement(
-                "div",
-                { className: "highlights-container" },
-                React.createElement(
-                    "h4",
-                    null,
-                    year,
-                    " Highlight Links"
-                ),
-                React.createElement(
-                    "div",
-                    { className: "highlight-groups-container" },
-                    highlightElements
-                )
-            )
-        );
-    }
-});
-
-$(function () {
-
-    ReactDOM.render(React.createElement(GalleryContent, null), document.getElementById('gallery-content'));
-
-    // TODO: Move
-
-    ReactDOM.render(React.createElement(_nav.Navigation, null), document.getElementById('navigation'));
-
-    $(window).scroll(function () {
-        (0, _nav.updateNavigationBar)();
-    });
-
-    (0, _nav.updateNavigationBar)();
-    /*
-    
-        var baseUrl = "http://designed.mit.edu/gallery/data/"
-        var colors = ['blue', 'orange', 'red', 'pink', 'silver', 'purple', 'green', 'yellow'];
-        var years = [2015, 2014, 2013, 2012];
-        var themes = ['Magic', 'Adventure', 'Be Well', 'Outdoors'];
-    
-        for (var j in years) {
-            var year = years[j];
-            var theme = themes[j]
-    
-            var $h2 = $('<h2>' + year + '</h2>')
-            var $h3 = $('<h3>' + theme + '</h3>')
-    
-            var $thumbnailContainer = $('<div class="thumbnail-container"></div>')
-            for (var i in colors) {
-                var url = baseUrl + year + '/final/photos/small/' + colors[i] + '1.jpg';
-                console.log(url);
-                var $thumbnail = $('<a href=""></a>')
-                var $thumbnailBg = $('<div class="thumbnail-bg"></div>')
-    
-                $thumbnailBg.append(`
-                <div class="product-info">
-                    <h4>Name of Product</h4>
-                    <p>Description of Product</p>
-                </div>
-                `);
-    
-                $thumbnailBg.css('background-image', 'url(' + url + ')');
-                $thumbnail.append($thumbnailBg);
-                $thumbnailContainer.append($thumbnail);
-            }
-            $('.gallery-container').append($h2).append($h3).append($thumbnailContainer);
-        }
-        */
-});
 
 /***/ })
 
