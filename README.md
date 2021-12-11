@@ -1,4 +1,4 @@
-# 2.009 Gallery
+# 2.009 Gallery README.md
 
 Hello! 
 
@@ -43,7 +43,7 @@ We're going to do a teensy bit of setup to get the gallery on your machine so yo
 10. To edit the data file, I **highly** recommend a text editor with syntax highlighting. [Visual Studio code](https://code.visualstudio.com/) is my current go-to.  Using your text editor, open up data.js
 11. Note the format of this .js file. Usually, the best way to understand this formatting is to stare at it for a bit. But if you'd like a more formal introduction, [this page](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) goes over the JSON format.
 12. Update the file with your desired year, and hit save. Once you hit save, you can go to http://localhost:8000/, refresh, and you should see the new year you updated!
-13. Once you're satisfied with how everything looks, you can now update the **live** data.js! Using the FTP client as mentioned in part 1, navigate to `/Library/WebServer/Documents/new/` and replace the data.js file. Place the old data.js file in the `data archive` folder. 
+13. Once you're satisfied with how everything looks, you can now update the **live** data.js! Using the FTP client as mentioned in part 1, navigate to `/Library/WebServer/Documents/new/`. You should see the existing data.js file. Place the old data.js file in the `data archive` folder, and name it data-[year].js. Now upload the new data.js file. 
 14. Check http://designed.mit.edu. Hit refresh a couple of times. You should now see the new data for the gallery. Hooray!
 15. Notify Victor that the designed.mit.edu has been updated so he can push everything to git to have it backed up in the cloud.
 
