@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   width: 100%;
   font-family: "Roboto", sans-serif;
 }
@@ -10,7 +11,7 @@ a {
 .top-bar .header {
   background-color: #111;
   color: #ccc;
-  font-size: 15px;
+  font-size: 18px;
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -22,7 +23,7 @@ a {
   color: #ddd;
 }
 .top-bar .header a {
-  padding: 8px 30px;
+  padding: 15px 40px;
   display: inline-block;
   color: #ddd;
 }
@@ -31,7 +32,7 @@ a {
 }
 .top-bar .navigation {
   position: fixed;
-  top: 30px;
+  top: 45px;
   left: 0;
   right: 0;
   background-color: #eee;
@@ -117,7 +118,7 @@ a {
   margin: 30px 30px 0px;
 }
 .gallery-container h3 {
-  margin: 3px 30px 30px;
+  margin: 3px 30px 10px;
   font-size: 24px;
   color: #666;
   font-weight: 700;
@@ -145,6 +146,8 @@ a {
   opacity: 0.7;
 }
 .thumbnail-container .thumbnail-bg {
+  border-radius: 10px;
+  overflow: hidden;
   z-index: -1;
   position: absolute;
   top: 10px;
@@ -166,7 +169,7 @@ a {
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00000000", endColorstr="#000000",GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#000000", GradientType=0);
   /* IE6-9 */
 }
 .thumbnail-container .thumbnail-bg .product-info h4 {
@@ -339,7 +342,7 @@ a {
 .project-container h2.condensed {
   left: 50px;
   z-index: 10001;
-  top: 40px;
+  top: 55px;
   transition: all 0.4s;
   font-size: 30px;
 }
