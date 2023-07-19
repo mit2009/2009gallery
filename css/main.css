@@ -32,7 +32,7 @@ a {
 }
 .top-bar .navigation {
   position: fixed;
-  top: 45px;
+  top: 48px;
   left: 0;
   right: 0;
   background-color: #eee;
@@ -342,7 +342,7 @@ a {
 .project-container h2.condensed {
   left: 50px;
   z-index: 10001;
-  top: 55px;
+  top: 58px;
   transition: all 0.4s;
   font-size: 30px;
 }
