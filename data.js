@@ -5,102 +5,105 @@ DATA = {
     themeDesc: "",
     highlights: [
       {
-        subheading: "The Class"
-      },
-      {
-        linkLabel: "Home page and slide show",
-        linkUrl: "data/2021/homepage/index.html"
-      },
-      {
-        linkLabel: "Theme Reveal",
-        linkUrl: "data/2021/highlights/theme_reveal_2021.mp4",
-      },
-      {
-        linkLabel: "Balloon Challenge",
-        linkUrl: "data/2021/highlights/balloon_challenge_2021.mp4",
-      },
-      {
-        linkLabel: "Product Teardown",
-        linkUrl: "data/2021/highlights/product_teardown_2021.mp4",
-      },
-      // {
-      //   linkLabel: "Debugging Skit",
-      //   linkUrl: "",
-      //   youtubeId: ""
-      // },
-      // {
-      //   linkLabel: "Inattentional Blindness",
-      //   linkUrl: "",
-      //   youtubeId: ""
-      // },
-      // {
-      //   linkLabel: "Engineering Ethics",
-      //   linkUrl: "",
-      //   youtubeId: ""
-      // },
-      {
-        subheading: "Final Presentations"
-      },
-      // {
-      //   linkLabel: "Compendium",
-      //   linkUrl: "",
-      //   youtubeId: ""
-      // },
-      {
-        linkLabel: "2.009 Around MIT - Quadcopter",
-        linkUrl: "data/2021/highlights/quad_2021.mp4",
-      },
-      {
-        linkLabel: "Opening Number - 'Beggin'",
-        linkUrl: "data/2021/highlights/beggin_2021.mp4",
-      },
-      {
-        linkLabel: "Countdown",
-        linkUrl: "data/2021/highlights/countdown_2021.mp4",
-      },
-      {
-        linkLabel: "Following Blue Team's Process",
-        linkUrl: "data/2021/highlights/blue_process_2021.mp4",
-      },
-      {
-        linkLabel: "Build Challenge",
-        linkUrl: "data/2021/highlights/build_challenge_2021.mp4",
-        //youtubeId: "insert ID here"
-      },
-      {
-        linkLabel: "Memories from Class",
-        linkUrl: "data/2021/highlights/syllabus_highlights_2021.mp4",
-        //youtubeId: "6ExC3yA8soY"
-      },
-      // {
-      //    linkLabel: "A Tribute to the Students",
-      //    linkUrl: "",
-      //    youtubeId: ""
-      // },
-      {
-        subheading: "Bonus Videos!"
-      },
-      // {
-      //   linkLabel: "Kresge Timelapse",
-      //   linkUrl: "",
-      //   youtubeId: ""
-      // },
-      {
-        linkLabel: "Halloween Video",
-        linkUrl: "data/2021/highlights/halloween_video_2021.mp4",
-      },
-      {
-        linkLabel: "Ideation Video",
-        linkUrl: "data/2021/highlights/ideation_2021.mp4",
-      },
-      {
-        linkLabel: "Product Design Process Video",
-        linkUrl: "data/2021/highlights/ideate_model_test_2021.mp4",
-      },
-      {
-        linkLabel: "FNAP Video",
-        linkUrl: "data/2021/highlights/FNAP_2021.mp4",
+        subheading: "Highlight Videos coming soon!"
       }
+      // {
+      //   subheading: "The Class"
+      // },
+      // {
+      //   linkLabel: "Home page and slide show",
+      //   linkUrl: "data/2021/homepage/index.html"
+      // },
+      // {
+      //   linkLabel: "Theme Reveal",
+      //   linkUrl: "data/2021/highlights/theme_reveal_2021.mp4",
+      // },
+      // {
+      //   linkLabel: "Balloon Challenge",
+      //   linkUrl: "data/2021/highlights/balloon_challenge_2021.mp4",
+      // },
+      // {
+      //   linkLabel: "Product Teardown",
+      //   linkUrl: "data/2021/highlights/product_teardown_2021.mp4",
+      // },
+      // // {
+      // //   linkLabel: "Debugging Skit",
+      // //   linkUrl: "",
+      // //   youtubeId: ""
+      // // },
+      // // {
+      // //   linkLabel: "Inattentional Blindness",
+      // //   linkUrl: "",
+      // //   youtubeId: ""
+      // // },
+      // // {
+      // //   linkLabel: "Engineering Ethics",
+      // //   linkUrl: "",
+      // //   youtubeId: ""
+      // // },
+      // {
+      //   subheading: "Final Presentations"
+      // },
+      // // {
+      // //   linkLabel: "Compendium",
+      // //   linkUrl: "",
+      // //   youtubeId: ""
+      // // },
+      // {
+      //   linkLabel: "2.009 Around MIT - Quadcopter",
+      //   linkUrl: "data/2021/highlights/quad_2021.mp4",
+      // },
+      // {
+      //   linkLabel: "Opening Number - 'Beggin'",
+      //   linkUrl: "data/2021/highlights/beggin_2021.mp4",
+      // },
+      // {
+      //   linkLabel: "Countdown",
+      //   linkUrl: "data/2021/highlights/countdown_2021.mp4",
+      // },
+      // {
+      //   linkLabel: "Following Blue Team's Process",
+      //   linkUrl: "data/2021/highlights/blue_process_2021.mp4",
+      // },
+      // {
+      //   linkLabel: "Build Challenge",
+      //   linkUrl: "data/2021/highlights/build_challenge_2021.mp4",
+      //   //youtubeId: "insert ID here"
+      // },
+      // {
+      //   linkLabel: "Memories from Class",
+      //   linkUrl: "data/2021/highlights/syllabus_highlights_2021.mp4",
+      //   //youtubeId: "6ExC3yA8soY"
+      // },
+      // // {
+      // //    linkLabel: "A Tribute to the Students",
+      // //    linkUrl: "",
+      // //    youtubeId: ""
+      // // },
+      // {
+      //   subheading: "Bonus Videos!"
+      // },
+      // // {
+      // //   linkLabel: "Kresge Timelapse",
+      // //   linkUrl: "",
+      // //   youtubeId: ""
+      // // },
+      // {
+      //   linkLabel: "Halloween Video",
+      //   linkUrl: "data/2021/highlights/halloween_video_2021.mp4",
+      // },
+      // {
+      //   linkLabel: "Ideation Video",
+      //   linkUrl: "data/2021/highlights/ideation_2021.mp4",
+      // },
+      // {
+      //   linkLabel: "Product Design Process Video",
+      //   linkUrl: "data/2021/highlights/ideate_model_test_2021.mp4",
+      // },
+      // {
+      //   linkLabel: "FNAP Video",
+      //   linkUrl: "data/2021/highlights/FNAP_2021.mp4",
+      // }
     ],
     projects: {
       blue: {
